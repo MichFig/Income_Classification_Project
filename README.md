@@ -1,7 +1,7 @@
 # Income Classification Project.
-Connor Mackenzie
-Ismahan Adan
-Michelle Fegatelli
+# Connor Mackenzie
+# Ismahan Adan
+# Michelle Fegatelli
 
 TOPIC – For our final project, we examined 1994 Census Income data from to predict whether an individuals’ income will exceed $50,000.00 per annum based on a variety of factors.  
 
