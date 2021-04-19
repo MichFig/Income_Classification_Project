@@ -1,6 +1,9 @@
-# App Engine Starter - Python 3 Edition
+# Income Classification Project.
+Connor Mackenzie
+Ismahan Adan
+Michelle Fegatelli
 
-In August 2018, Google finally saw fit to bless us with [Python 3 on App Engine's standard environment](https://cloud.google.com/blog/products/gcp/introducing-app-engine-second-generation-runtimes-and-python-3-7). Goodbye Python 2 and webapp2, hello Python 3 and Flask.
+TOPIC – For our final project, we examined 1994 Census Income data from to predict whether an individuals’ income will exceed $50,000.00 per annum based on a variety of factors.  
 
 **Built with**:
 - [Bootstrap v4.1](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
