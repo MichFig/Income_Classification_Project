@@ -1,4 +1,4 @@
-##INCOME CLASSIFICATION PROJECT
+#INCOME CLASSIFICATION PROJECT
 Connor Mackenzie
 Ismahan Adan
 Michelle Fegatelli
