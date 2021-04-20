@@ -9,6 +9,9 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+@app.route('/counts')
+def counts():
+    return render_template('counts.html')
 
 @app.route('/about')
 def about():
