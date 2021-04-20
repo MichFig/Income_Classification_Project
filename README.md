@@ -11,9 +11,11 @@ dataset.  <br>
 
 ![](images/csv.raw.png)
 
-The raw data has a RangeIndex: 32561 entries, 0 to 32560 and Data columns (total 15 columns). 
+The raw data has a Range Index: 32561 entries, 0 to 32560 and Data columns (total 15 columns). 
 
 ![](images/data.info.png)
+
+The data was encoded for modeling.  Cleaned  
 
 
 **Dataset** <br><br>
