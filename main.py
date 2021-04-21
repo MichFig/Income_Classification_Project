@@ -17,6 +17,9 @@ def counts():
 def about():
     return render_template('about.html')
 
+@app.route('/age')
+def age():
+    return render_template('age.html')
 
 @app.errorhandler(404)
 def page_not_found(error):

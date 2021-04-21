@@ -28,6 +28,8 @@
   <!-- Jinja2 stuff related to generating nav and setting active state. Add more pages here! -->
   {% set navigation_bar = [('/', 'home', 'Home'), ('/about', 'about', 'About'), ('/counts', 'counts','Counts')] -%}
 
+  {% set dropdown = [('/age', 'age','Age')] -%}
+
   {% set active_page = active_page|default('home') -%}
 
   <body>
@@ -53,7 +55,21 @@
                 </li>
             {% endif %}
           {% endfor %}
+          <li class='nav-item active dropdown'>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Charts
+            </a>
+            <div class='dropdown-menu' aria-labelledby="navbarDropdown">
+              {% for href, id, caption in dropdown%}
+                {% if id == active_page %}
+                  <a class='dropdown-item' href="{{ href|e }}">{{ caption|e }} <span class="sr-only">(current)</span></a>
+                {% else %} 
+                  <a class='dropdown-item' href="{{ href|e }}">{{ caption|e }}</a>
+                {% endif %} 
+              {% endfor %}
 
+            </div>
+          </li>
         </ul>
       </div>
     </nav>
