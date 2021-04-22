@@ -1,0 +1,10 @@
+work_class,<=50K,total,>50K
+ ?,1645,1836,191
+ Federal-gov,589,960,371
+ Local-gov,1476,2093,617
+ Never-worked,7,7,0
+ Private,17733,22696,4963
+ Self-emp-inc,494,1116,622
+ Self-emp-not-inc,1817,2541,724
+ State-gov,945,1298,353
+ Without-pay,14,14,0
