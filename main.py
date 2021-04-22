@@ -21,6 +21,10 @@ def about():
 def age():
     return render_template('age.html')
 
+@app.route('/education')
+def education():
+    return render_template('education.html')
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
