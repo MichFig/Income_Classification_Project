@@ -3,8 +3,20 @@
 {% block content %}
 
 <div class="chart" id = '{{ selected }}'></div>
-<div id='countChart'></div>
-<div id='incomeChart'></div>
+
+<div class='container'>
+    <div class='card'>
+        <div class='card-img-top' id='countChart'></div>
+        <div class='card-body'></div>
+        <p id='countText'></p>
+    </div>
+    <div class='card mt-3'>
+        <div class='card-img-top' id='incomeChart'></div>
+        <div class='card-body'></div>
+        <p id='incomeText'></p>
+    </div>
+</div>
+
 
 
 <script src='static/js/charts.js/'></script>

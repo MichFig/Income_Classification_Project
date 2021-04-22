@@ -1,6 +1,7 @@
 var div = d3.select('.chart');
 var selection = div.attr('id').split(' ')[1];
-console.log(selection)
+
+
 var barGroup = div.append('g').attr('class','barGroup')
 var filePath = `static/data/${selection}.csv`
 d3.csv(filePath).then(d=>{
@@ -56,4 +57,14 @@ d3.csv(filePath).then(d=>{
     Plotly.newPlot('incomeChart',data2,layout2);
 
 })
+
+textFile = `static/chart_text/${selection}_text.csv`
+d3.csv(textFile).then(text=>{
+    console.log(text[0].Count)
+    var countParagraph = d3.select('#countText');
+    countParagraph.text(text[0].Count);
+
+    var incomeParagraph = d3.select('#incomeText');
+    incomeParagraph.text(text[0].Income);
+});
 
