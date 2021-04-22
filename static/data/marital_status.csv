@@ -1,0 +1,8 @@
+marital_status,<=50K,total,>50K
+ Divorced,3980,4443,463
+ Married-AF-spouse,13,23,10
+ Married-civ-spouse,8284,14976,6692
+ Married-spouse-absent,384,418,34
+ Never-married,10192,10683,491
+ Separated,959,1025,66
+ Widowed,908,993,85

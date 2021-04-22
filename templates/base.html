@@ -26,7 +26,10 @@
   </head>
 
   <!-- Jinja2 stuff related to generating nav and setting active state. Add more pages here! -->
-  {% set navigation_bar = [('/', 'home', 'Home'), ('/about', 'about', 'About')] -%}
+  {% set navigation_bar = [('/', 'home', 'Home'), ('/about', 'about', 'About'), ('/counts', 'counts','Counts')] -%}
+
+  {% set dropdown = [('/age', 'age','Age'), ('/education', 'education', 'Education'), ('/marital_status', 'marital_status','Marital Status'), ('/hours_per_week', 'hours_per_week','Hours per Week'),
+                        ('/native_country', 'native_country', 'Native Country'), ('/occupation', 'occupation', 'Occupation'), ('/race', 'race', 'Race'), ('/sex', 'sex', 'Sex'), ('/work_class', 'work_class', 'Work Class')] -%}
 
   {% set active_page = active_page|default('home') -%}
 
@@ -53,7 +56,21 @@
                 </li>
             {% endif %}
           {% endfor %}
+          <li class='nav-item active dropdown'>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Charts
+            </a>
+            <div class='dropdown-menu' aria-labelledby="navbarDropdown">
+              {% for href, id, caption in dropdown%}
+                {% if id == active_page %}
+                  <a class='dropdown-item' href="{{ href|e }}">{{ caption|e }} <span class="sr-only">(current)</span></a>
+                {% else %} 
+                  <a class='dropdown-item' href="{{ href|e }}">{{ caption|e }}</a>
+                {% endif %} 
+              {% endfor %}
 
+            </div>
+          </li>
         </ul>
       </div>
     </nav>
