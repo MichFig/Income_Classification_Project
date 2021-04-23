@@ -13,22 +13,22 @@ dataset.  <br>
 
 The raw data was downloaded as a single csv.  The raw data revealed 32561 rows distributed throughout 15 columns.  Columns consisted of the following:  
 
-Age
-Working Class
-Final Weight
-Education
-Education Number
-Maritial Status
-Occupation
-Relationship
-Race
-Sex
-Capital Gain
-Capital Loss
-Hours Per Week
-Native Country
-Label
-
+Age<br>
+Working Class<br>
+Final Weight<br>
+Education<br>
+Education Number<br>
+Maritial Status<br>
+Occupation<br>
+Relationship<br>
+Race<br>
+Sex<br>
+Capital Gain<br>
+Capital Loss<br>
+Hours Per Week<br>
+Native Country<br>
+Label<br>
+<br>
 Individual csv files were created based on age and education, age and income, education and capital gain, education and capital loss, marital status and education and finally working class and income.
 
 ![](images/data.info.png)
