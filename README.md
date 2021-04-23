@@ -3,7 +3,7 @@
 
 
 **Focus** <br><br>
-Examination of 1994 Census Income data to in ean effort to predict whether an individual income will exceed $50,000.00 per annum based on a variety of factors such as education, age marital status, relationship status.  
+Examination of 1994 Census Income data in an attempt to predict whether an individual's income will exceed $50,000.00 per annum based on a variety of factors such as education, age marital status, relationship status.  
 
 **Dataset** <br><br>
 This project utilized a <br><br>![](images/Kaggle.png) 
