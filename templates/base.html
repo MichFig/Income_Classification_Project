@@ -1,93 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="A fantastic website that will enlighten and delight.">
-    <meta name="author" content="Benjamin C. Pyrik">
-    <!--<link rel="icon" href="TODO">-->
 
-    <!-- Favicons (http://realfavicongenerator.net)
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--<link rel="icon" href="TODO">-->
+
+  <!-- Favicons (http://realfavicongenerator.net)
     TODO -->
 
-    <!-- Open Graph
+  <!-- Open Graph
     TODO -->
 
-    <title></title>
+  <title></title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Custom styles -->
-    <link href="static/css/custom.css" rel="stylesheet">
-    <!-- D3 -->
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <!-- Plotly -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  </head>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Custom styles -->
+  <link href="static/css/custom.css" rel="stylesheet">
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
 
-  <!-- Jinja2 stuff related to generating nav and setting active state. Add more pages here! -->
-  {% set navigation_bar = [('/', 'home', 'Home'), ('/about', 'about', 'About'), ('/counts', 'counts','Counts')] -%}
+<!-- Jinja2 stuff related to generating nav and setting active state. Add more pages here! -->
+{% set navigation_bar = [('/', 'home', 'Home'), ('/about', 'about', 'About'), ('/counts', 'counts','Counts')] -%}
 
-  {% set dropdown = [('/age', 'age','Age'), ('/education', 'education', 'Education'), ('/marital_status', 'marital_status','Marital Status'), ('/hours_per_week', 'hours_per_week','Hours per Week'),
-                        ('/native_country', 'native_country', 'Native Country'), ('/occupation', 'occupation', 'Occupation'), ('/race', 'race', 'Race'), ('/sex', 'sex', 'Sex'), ('/work_class', 'work_class', 'Work Class')] -%}
+{% set dropdown = [('/age', 'age','Age'), ('/education', 'education', 'Education'), ('/marital_status',
+'marital_status','Marital Status'), ('/hours_per_week', 'hours_per_week','Hours per Week'),
+('/native_country', 'native_country', 'Native Country'), ('/occupation', 'occupation', 'Occupation'), ('/race', 'race',
+'Race'), ('/sex', 'sex', 'Sex'), ('/work_class', 'work_class', 'Work Class')] -%}
 
-  {% set active_page = active_page|default('home') -%}
+{% set active_page = active_page|default('home') -%}
 
-  <body>
+<body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <!-- Navbar branding. -->
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <nav class="navbar navbar-expand md navbar-dark bg-dark fixed-top">
+    <!-- Navbar branding. -->
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-
-          {% for href, id, caption in navigation_bar %}
-            {% if id == active_page %}
-                <li class="nav-item active">
-                  <a class="nav-link" href="{{ href|e }}">{{ caption|e }} <span class="sr-only">(current)</span></a>
-                </li>
-            {% else %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
-                </li>
-            {% endif %}
-          {% endfor %}
-          <li class='nav-item active dropdown'>
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Charts
-            </a>
-            <div class='dropdown-menu' aria-labelledby="navbarDropdown">
-              {% for href, id, caption in dropdown%}
-                {% if id == active_page %}
-                  <a class='dropdown-item' href="{{ href|e }}">{{ caption|e }} <span class="sr-only">(current)</span></a>
-                {% else %} 
-                  <a class='dropdown-item' href="{{ href|e }}">{{ caption|e }}</a>
-                {% endif %} 
-              {% endfor %}
-
-            </div>
-          </li>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <ul class="nav navbar-nav navbar-right">
+          <li><img class="pull-right"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvtvzD29N6qrJodpiA2qqWBYK-HKoblfskSQ&usqp=CAU"
+              width="75%" id="eye"></li>
         </ul>
-      </div>
-    </nav>
 
-    <main role="main" class="container">
+        {% for href, id, caption in navigation_bar %}
+        {% if id == active_page %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ href|e }}">{{ caption|e }} <span class="sr-only">(current)</span></a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+        <li class='nav-item active dropdown'>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Charts
+          </a>
+          <div class='dropdown-menu' aria-labelledby="navbarDropdown">
+            {% for href, id, caption in dropdown%}
+            {% if id == active_page %}
+            <a class='dropdown-item' href="{{ href|e }}">{{ caption|e }} <span class="sr-only">(current)</span></a>
+            {% else %}
+            <a class='dropdown-item' href="{{ href|e }}">{{ caption|e }}</a>
+            {% endif %}
+            {% endfor %}
 
-      <!-- Content -->
-      {% block content %}
-      {% endblock %}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    </main><!-- /.container -->
+  <main role="main" class="container">
 
-    <!-- Bootstrap core JavaScript
+    <!-- Content -->
+    {% block content %}
+    {% endblock %}
+
+  </main><!-- /.container -->
+
+  <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
