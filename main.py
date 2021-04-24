@@ -53,6 +53,10 @@ def sex():
 def work_class():
     return render_template('chart_base.html',selected=work_class)
 
+@app.route('/create')
+def create():
+    return render_template('create.html')
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
