@@ -6,7 +6,7 @@
 Examination of 1994 Census Income data in an attempt to predict whether an individual's income will exceed $50,000.00 per annum based on a variety of factors such as education, age, marital status, relationship status and work classification.  
 
 **Dataset** <br><br>
-This project utilized a ![Kaggle](images/Kaggle_67.png)
+This project utilized a ![Kaggle](images/Kaggle_67_1_50.png)
 
 dataset.  <br>  
 
