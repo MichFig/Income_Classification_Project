@@ -134,7 +134,7 @@ function ageChanged(age){
 };
 
 function wcChanged(workclass){
-    selections['Workclass'][0] = workclass;
+    selections['Employment Status'][0] = workclass;
     makeTheGraph();
 };
 
