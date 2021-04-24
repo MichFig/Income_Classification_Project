@@ -23,9 +23,9 @@ The raw data was downloaded as a single csv.  The raw data revealed 32561 rows d
 ![](images/heroku.png)
 
 
-- [Scikit-Learn](https://scikit-learn.org/stable/)
-- [Flask v1.0.2](http://flask.pocoo.org/)
-- [Jinja2](http://jinja.pocoo.org/docs/2.10/)
+- [Scikit-LearnF](https://scikit-learn.org/stable/)
+- [Heroku](https://dashboard.heroku.com/apps/)
+
 
 
 
