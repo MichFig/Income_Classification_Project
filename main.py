@@ -13,10 +13,6 @@ def home():
 def counts():
     return render_template('counts.html')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
 @app.route('/age')
 def age():
     return render_template('chart_base.html',selected=age)
@@ -53,9 +49,9 @@ def sex():
 def work_class():
     return render_template('chart_base.html',selected=work_class)
 
-@app.route('/create')
-def create():
-    return render_template('create.html')
+@app.route('/data')
+def data():
+    return render_template('data.html')
 
 @app.errorhandler(404)
 def page_not_found(error):
