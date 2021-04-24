@@ -6,7 +6,8 @@
 Examination of 1994 Census Income data in an attempt to predict whether an individual's income will exceed $50,000.00 per annum based on a variety of factors such as education, age, marital status, relationship status and work classification.  
 
 **Dataset** <br><br>
-This project utilized a <br><br>![](images/Kaggle.png) 
+This project utilized a ![Kaggle](images/Kaggle_67.png)
+
 dataset.  <br>  
 
 ![](images/csv.raw.png)
@@ -17,12 +18,15 @@ The raw data was downloaded as a single csv.  The raw data revealed 32561 rows d
 
  
 
-**Charts** <br><br>
+**Machine Learning** <br><br>
 
- 
-- [Bootstrap v4.1](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
-- [Flask v1.0.2](http://flask.pocoo.org/)
-- [Jinja2](http://jinja.pocoo.org/docs/2.10/)
+![](images/scikitlearn.png)<br>
+![](images/heroku.png)
+
+
+- [Scikit-LearnF](https://scikit-learn.org/stable/)
+- [Heroku](https://dashboard.heroku.com/apps/)
+
 
 
 
