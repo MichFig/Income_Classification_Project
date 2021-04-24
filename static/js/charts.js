@@ -1,5 +1,7 @@
 var div = d3.select('.chart');
-var selection = div.attr('id').split(' ')[1];
+console.log(div.attr('id'))
+var selection = div.attr('id').split(' ')[0];
+var title = div.attr('id').split(' ')[1];
 
 
 var barGroup = div.append('g').attr('class','barGroup')
@@ -19,9 +21,8 @@ d3.csv(filePath).then(d=>{
     var data = [trace1];
 
     var layout = {
-        title: `${selection}`,
         xaxis: {
-            title: `${selection}`
+            title: title
         },
         yaxis: {
             title:'Number of Datapoints'
@@ -46,10 +47,10 @@ d3.csv(filePath).then(d=>{
     var data2 = [trace2, trace3];
     var layout2 = {
         barmode: 'relative',
-        title:`${selection} with Income`,
-        xaxis:{
-            title: `${selection}`
+        xaxis: {
+            title: title
         },
+        
         yaxis: {
             title: 'Number of Datapoints'
         }
@@ -58,13 +59,5 @@ d3.csv(filePath).then(d=>{
 
 })
 
-textFile = `static/chart_text/${selection}_text.csv`
-d3.csv(textFile).then(text=>{
-    console.log(text[0].Count)
-    var countParagraph = d3.select('#countText');
-    countParagraph.text(text[0].Count);
 
-    var incomeParagraph = d3.select('#incomeText');
-    incomeParagraph.text(text[0].Income);
-});
 

@@ -118,7 +118,7 @@ function makeDropdowns(){
 
 var selections = {
     'Age': ['unselected', 'age'],
-    'Workclass': ['unselected', 'workclass'],
+    'Employment Status': ['unselected', 'workclass'],
     'Education Level': ['unselected', 'education'],
     'Marital Status': ['unselected', 'marital-status'],
     'Occupation': ['unselected', 'occupation'],

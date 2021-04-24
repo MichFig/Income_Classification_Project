@@ -15,39 +15,39 @@ def counts():
 
 @app.route('/age')
 def age():
-    return render_template('chart_base.html',selected=age)
+    return render_template('chart_base.html',selected='age', title='Age')
 
 @app.route('/education')
 def education():
-    return render_template('chart_base.html',selected=education)
+    return render_template('chart_base.html',selected='education', title='Education Level')
 
 @app.route('/hours_per_week')
 def hours_per_week():
-    return render_template('chart_base.html',selected=hours_per_week)
+    return render_template('chart_base.html',selected='hours_per_week', title='Hours Per Week')
 
 @app.route('/marital_status')
 def marital_status():
-    return render_template('chart_base.html',selected=marital_status)
+    return render_template('chart_base.html',selected='marital_status', title='Marital Status')
 
 @app.route('/native_country')
 def native_country():
-    return render_template('chart_base.html',selected=native_country)
+    return render_template('chart_base.html',selected='native_country', title='Native Country')
 
 @app.route('/occupation')
 def occupation():
-    return render_template('chart_base.html',selected=occupation)
+    return render_template('chart_base.html',selected='occupation', title='Occupation')
 
 @app.route('/race')
 def race():
-    return render_template('chart_base.html',selected=race)
+    return render_template('chart_base.html',selected='race', title='Race')
 
 @app.route('/sex')
 def sex():
-    return render_template('chart_base.html',selected=sex)
+    return render_template('chart_base.html',selected='sex', title='Sex')
 
 @app.route('/work_class')
 def work_class():
-    return render_template('chart_base.html',selected=work_class)
+    return render_template('chart_base.html',selected='work_class', title='Employment Status')
 
 @app.route('/data')
 def data():
