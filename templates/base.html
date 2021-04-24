@@ -15,7 +15,7 @@
     <!-- Open Graph
     TODO -->
 
-    <title>ws</title>
+    <title>Income Classification Project</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -28,7 +28,7 @@
   </head>
 
   <!-- Jinja2 stuff related to generating nav and setting active state. Add more pages here! -->
-  {% set navigation_bar = [('/', 'home', 'Home'), ('/about', 'about', 'About'), ('/create', 'create', 'Create')] -%}
+  {% set navigation_bar = [('/', 'home', 'Home'), ('/data', 'data', 'Data')] -%}
 
 
 
@@ -52,10 +52,9 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" style='width:140px'>
           <li><img class="pull-right"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvtvzD29N6qrJodpiA2qqWBYK-HKoblfskSQ&usqp=CAU"
-              width="75%" id="eye"></li>
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvtvzD29N6qrJodpiA2qqWBYK-HKoblfskSQ&usqp=CAU" width='100%' id="eye"></li>
         </ul>
 
         {% for href, id, caption in navigation_bar %}

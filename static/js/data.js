@@ -1,5 +1,5 @@
 function makeDropdowns(){
-    d3.csv('static/data/income_evaluation.csv').then(data =>{
+    d3.csv('static/data/no_spaces.csv').then(data =>{
         //age dropdown
         var age = data.map(d => +d.age);
         var ageUnique = _.uniq(age);
@@ -183,9 +183,11 @@ function makeTheGraph(){
     };
     if (printSelections.length == 0){
         printHere.text('Make a selection!');
+        actuallyMakeTheGraph();
     }else{
         printHere.text(printSelections);
         actuallyMakeTheGraph();
+        iPromiseThisMakesTheGraph();
     };
 
 
@@ -196,16 +198,18 @@ makeDropdowns();
 makeTheGraph();
 
 function actuallyMakeTheGraph(){
-    d3.csv('static/data/income_evaluation.csv').then(data =>{
+    d3.csv('static/data/no_spaces.csv').then(data =>{
+        
+        
         for (var key in selections){
+            column = selections[key][1];
+            selection = selections[key][0];
             if (selections[key][0] != 'unselected') {
-                data = data.filter(d => {
-                    d[selections[key][1]] == d[selections[key][0]]
-                });
+                data = data.filter(d => d[column] == selections[key][0])
 
             };
         };
-        console.log(data);
+        
         var printHere2 = d3.select('#printHere2');
         if (data.length == 0){
             printHere2.text('No records match your selections');
@@ -213,7 +217,43 @@ function actuallyMakeTheGraph(){
         }else{
             var numberOfRecords = data.length;
             printHere2.text(`${numberOfRecords} records match your selections`)
-        }
+            var numberOver50k = data.filter(d=> d['income'] == '>50K').length
+            var printHere3 = d3.select('#printHere3');
+            printHere3.text(`${numberOfRecords - numberOver50k} make 50K or less`)
+        };
+
+        
+        
+
     });
     
 }
+function iPromiseThisMakesTheGraph(){
+    d3.csv('static/data/no_spaces.csv').then(data =>{
+        for (var key in selections){
+            column = selections[key][1];
+            selection = selections[key][0];
+            if (selections[key][0] != 'unselected') {
+                data = data.filter(d => d[column] == selections[key][0])
+
+            };
+        };
+
+        d3.select('table').remove()
+        var table = d3.select('#tableGoesHere').append('table').attr('class','table');
+        var tableHead = table.append('thead');
+        var tableHeadRow = tableHead.append('tr').attr('class','table-primary');
+        for (key in selections){
+            tableHeadRow.append('th').text(key)
+        }
+
+        var tableBody = table.append('tbody');
+        data.forEach(d=>{
+            row = tableBody.append('tr');
+            for (key in selections){
+                row.append('td')
+                    .text(d[selections[key][1]])
+            }
+        });
+    });
+};
