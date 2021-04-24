@@ -20,12 +20,13 @@ The raw data was downloaded as a single csv.  The raw data revealed 32561 rows d
 
 **Machine Learning** <br><br>
 
-![](images/scikitlearn.png)<br>
-![](images/heroku.png)
+![](images/scikitlearn_50.png)<br>
+![](images/heroku_30.png)
 
 
-- [Scikit-LearnF](https://scikit-learn.org/stable/)
-- [Heroku](https://dashboard.heroku.com/apps/)
+- [Scikit-Learn](https://scikit-learn.org/stable/)
+- [Heroku](https://www.heroku.com/)
+- 
 
 
 
