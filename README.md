@@ -17,10 +17,14 @@ The raw data was downloaded as a single csv.  The raw data revealed 32561 rows d
 
  
 
-**Charts** <br><br>
+**Machine Learning** <br><br>
 
- 
-- [Bootstrap v4.1](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+![](images/scikitlearn.png)
+
+
+
+
+- [Scikit-Learn](https://scikit-learn.org/stable/)
 - [Flask v1.0.2](http://flask.pocoo.org/)
 - [Jinja2](http://jinja.pocoo.org/docs/2.10/)
 
