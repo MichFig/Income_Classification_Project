@@ -14,7 +14,7 @@ dataset.  <br>
 
 The raw data was downloaded as a single csv.  The raw data revealed 32561 rows distributed throughout 15 columns.  Columns consisted of the following:  
 
-![](images/data.info.png)
+![](images/Raw.Data_50.png)
 
  
 
