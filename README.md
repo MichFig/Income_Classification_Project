@@ -6,17 +6,19 @@
 Examination of 1994 Census Income data in an attempt to predict whether an individual's income will exceed $50,000.00 per annum based on a variety of factors such as education, age, marital status, relationship status and work classification.  
 
 **Dataset** <br><br>
-This project utilized a ![Kaggle](images/Kaggle_67.png)
-
-dataset.  <br>  
+This project utilized a ![Kaggle](images/Kaggle_67.png)dataset.  <br>  
 
 ![](images/csv.raw.png)
 
-The raw data was downloaded as a single csv.  The raw data revealed 32561 rows distributed throughout 15 columns.  Columns consisted of the following:  
+The raw data was downloaded as a single csv.  The raw data revealed 32561 rows distributed throughout 15 columns.  Columns consisted of the following data types:  
 
 ![](images/Raw.Data_50.png)
 
- 
+The data was first cleand by dropping all rows with any missing information.  ![](images/clean.png)<br>
+Columns were then renamed. ![](images/rename.png)<br>
+
+Finally they were grouped and exported as separate csv files. ![](images/age.income.png)<br> 
+
 
 **Machine Learning** <br><br>
 
