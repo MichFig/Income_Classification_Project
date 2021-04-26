@@ -44,18 +44,14 @@ The object was then fit, trained tested and plotted.
 
 
 
-
-
-
-
-
-
-
+Hosted by:
 - [Heroku](https://www.heroku.com/)<br>![](images/heroku_30.png)<br><br>
+
+
 
 Project By:  
 - [Connor MacKenzie](https://github.com/amerikonnor/)<br>
-- [Ismahan Adan](https://github.com/)<br>
+- [Ismahan Adan](https://github.com/ismahanadan/)<br>
 - [Michelle Fegatelli](https://github.com/MichFig/) <br>
 
 
