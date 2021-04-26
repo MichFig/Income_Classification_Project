@@ -14,8 +14,12 @@ The raw data was downloaded as a single csv.  The raw data revealed 32561 rows d
 
 ![](images/Raw.Data_50.png)
 
-The data was first cleand by dropping all rows with any missing information.  ![](images/clean.png)<br>
-Columns were then renamed. ![](images/rename.png)<br>
+**Cleaning and Preparing the Data** <br><br>
+
+The data was first cleand by dropping all rows with any missing information.  ![](images/clean.png) <br>
+Columns were then renamed. 
+
+![](images/rename.png)
 
 Finally they were grouped and exported as six (6) separate csv files. ![](images/age.income.png)<br> 
 
@@ -24,11 +28,12 @@ Finally they were grouped and exported as six (6) separate csv files. ![](images
 
 
 
+- [Scikit-Learn](https://scikit-learn.org/stable/)<br>![](images/scikitlearn_50.png)<br><br>
 
 
 
-- [Scikit-Learn](https://scikit-learn.org/stable/)<br>![](images/scikitlearn_50.png)<br><br><br>
-- [Heroku](https://www.heroku.com/)<br>![](images/heroku_30.png)<br><br><br>
+
+
 - [Scikit-Learn](https://scikit-learn.org/stable/)
 - [Scikit-Learn](https://scikit-learn.org/stable/)
 
@@ -49,11 +54,12 @@ Finally they were grouped and exported as six (6) separate csv files. ![](images
 
 
 
+- [Heroku](https://www.heroku.com/)<br>![](images/heroku_30.png)<br><br>
 
 Project By:  
-Connor MacKenzie<br>
-Ismahan Adan<br>
-Michelle Fegatelli<br>
+- [Connor MacKenzie](https://github.com/amerikonnor)<br>
+- [Ismahan Adan](https://github.com/)<br>
+- [Michelle Fegatelli](https://github.com/MichFig) <br>
 
 
 
