@@ -17,7 +17,7 @@ The raw data was downloaded as a single csv.  The raw data revealed 32561 rows d
 The data was first cleand by dropping all rows with any missing information.  ![](images/clean.png)<br>
 Columns were then renamed. ![](images/rename.png)<br>
 
-Finally they were grouped and exported as separate csv files. ![](images/age.income.png)<br> 
+Finally they were grouped and exported as six (6) separate csv files. ![](images/age.income.png)<br> 
 
 
 **Machine Learning** <br><br>
