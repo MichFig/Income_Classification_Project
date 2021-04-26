@@ -16,28 +16,20 @@ The raw data was downloaded as a single csv.  The raw data revealed 32561 rows d
 
 **Cleaning and Preparing the Data** <br><br>
 
-The data was first cleand by dropping all rows with any missing information.  ![](images/clean.png) <br>
-Columns were then renamed. 
+The data was first cleand by dropping all rows with any missing information.  ![](images/clean.png) 
+Columns were then renamed.<br> ![](images/rename.png)
 
-![](images/rename.png)
-
-Finally they were grouped and exported as six (6) separate csv files. ![](images/age.income.png)<br> 
-
-
-**Machine Learning** <br><br>
+Finally they were grouped and exported as six (6) separate csv files. <br> <br> 
+![](images/age.income.png)<br> 
 
 
-
+**Machine Learning and Neural Networks** <br><br>
 - [Scikit-Learn](https://scikit-learn.org/stable/)<br>![](images/scikitlearn_50.png)<br><br>
 
-
-
-
-
-- [Scikit-Learn](https://scikit-learn.org/stable/)
-- [Scikit-Learn](https://scikit-learn.org/stable/)
-
-
+- Machine Learning![](modelpics/decision_tree_screenshot.png)<br>
+![](modelpics/deep_model_screenshot(1).png)<br>
+![](modelpics/deep_model_screenshot(2).png)<br>
+![](modelpics/deep_model_screenshot(3).png)<br>
 
 
 
@@ -57,9 +49,9 @@ Finally they were grouped and exported as six (6) separate csv files. ![](images
 - [Heroku](https://www.heroku.com/)<br>![](images/heroku_30.png)<br><br>
 
 Project By:  
-- [Connor MacKenzie](https://github.com/amerikonnor)<br>
+- [Connor MacKenzie](https://github.com/amerikonnor/)<br>
 - [Ismahan Adan](https://github.com/)<br>
-- [Michelle Fegatelli](https://github.com/MichFig) <br>
+- [Michelle Fegatelli](https://github.com/MichFig/) <br>
 
 
 
