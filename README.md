@@ -19,21 +19,26 @@ The raw data was downloaded as a single csv.  The raw data revealed 32561 rows d
 The data was first cleand by dropping all rows with any missing information.  ![](images/clean.png) 
 Columns were then renamed.<br> ![](images/rename.png)
 
-Finally they were grouped and exported as six (6) separate csv files. <br> <br> 
-![](images/age.income.png)<br> 
+Finally they were grouped and exported as six (6) separate csv files. <br> ![](images/age.income.png)
 
 
-**Machine Learning and Neural Networks** <br><br>
+**Machine Learning, Decision Trees, Linear Regression and Neural Networks** <br><br>
+
+Libraries were imported.  
 - [Scikit-Learn](https://scikit-learn.org/stable/)<br>![](images/scikitlearn_50.png)<br><br>
 
-- Machine Learning![](modelpics/decision_tree_screenshot.png)<br>
+Data was was read in and viewed.  It was then divided into attributes and labels and the further divided in to training and test sets.    
+![](modelpics/decision_tree_screenshot.png)<br>
 ![](modelpics/deep_model_screenshot(1).png)<br>
 ![](modelpics/deep_model_screenshot(2).png)<br>
 ![](modelpics/deep_model_screenshot(3).png)<br>
 
+From the sklearn module we used the LinearRegression method to create a linear regression object.
 
+![](modelpics\multiregression_screenshot(1).png)<br>
 
-
+The object was then fit, trained tested and plotted. 
+![](modelpics\multiregression_screenshot(2).png)<br>
 
 
 
