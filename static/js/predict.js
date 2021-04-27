@@ -116,17 +116,27 @@ function makeDropdowns(){
 
 };
 
+var ageSelected = d3.select('#ageSelect').node().value;
+
+var wcSelected = d3.select('#wcSelect').node().value;
+var edSelected = d3.select('#edSelect').node().value;
+var msSelected = d3.select('#msSelect').node().value;
+var ocSelected = d3.select('#ocSelect').node().value;
+var raceSelected = d3.select('#raceSelect').node().value;
+var sexSelected = d3.select('#sexSelect').node().value;
+var hoursSelected = d3.select('#hoursSelect').node().value;
+var ncSelected = d3.select('#ncSelect').node().value;
 
 var selections = {
-    'Age': ['unselected', 'age'],
-    'Employment Status': ['unselected', 'workclass'],
-    'Education Level': ['unselected', 'education'],
-    'Marital Status': ['unselected', 'marital-status'],
-    'Occupation': ['unselected', 'occupation'],
-    'Race': ['unselected', 'race'],
-    'Sex': ['unselected', 'sex'],
-    'Hours per Week': ['unselected', 'hours-per-week'],
-    'Native Country': ['unselected', 'native-country']
+    'Age': [ageSelected, 'age'],
+    'Employment Status': [wcSelected, 'workclass'],
+    'Education Level': [edSelected, 'education'],
+    'Marital Status': [msSelected, 'marital-status'],
+    'Occupation': [ocSelected, 'occupation'],
+    'Race': [raceSelected, 'race'],
+    'Sex': [sexSelected, 'sex'],
+    'Hours per Week': [hoursSelected, 'hours-per-week'],
+    'Native Country': [ncSelected, 'native-country']
 }
 
 function ageChanged(age){

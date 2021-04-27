@@ -182,10 +182,10 @@ function makeTheGraph(){
         };
     };
     if (printSelections.length == 0){
-        printHere.text('Make a selection!');
+        // printHere.text('Make a selection!');
         actuallyMakeTheGraph();
     }else{
-        printHere.text(printSelections);
+        // printHere.text(printSelections);
         actuallyMakeTheGraph();
         iPromiseThisMakesTheGraph();
     };
@@ -211,14 +211,17 @@ function actuallyMakeTheGraph(){
         };
         
         var printHere2 = d3.select('#printHere2');
+        var printHere3 = d3.select('#printHere3');
         if (data.length == 0){
             printHere2.text('No records match your selections');
+            printHere3.text('');
+            
 
         }else{
             var numberOfRecords = data.length;
             printHere2.text(`${numberOfRecords} records match your selections`)
             var numberOver50k = data.filter(d=> d['income'] == '>50K').length
-            var printHere3 = d3.select('#printHere3');
+            
             printHere3.text(`${numberOfRecords - numberOver50k} make 50K or less`)
         };
 
@@ -240,9 +243,9 @@ function iPromiseThisMakesTheGraph(){
         };
 
         d3.select('table').remove()
-        var table = d3.select('#tableGoesHere').append('table').attr('class','table');
+        var table = d3.select('#tableGoesHere').append('table').attr('class','table table-striped table-dark');
         var tableHead = table.append('thead');
-        var tableHeadRow = tableHead.append('tr').attr('class','table-primary');
+        var tableHeadRow = tableHead.append('tr').attr('class','bg-secondary');
         for (key in selections){
             tableHeadRow.append('th').text(key)
         }

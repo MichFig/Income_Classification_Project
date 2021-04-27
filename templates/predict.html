@@ -5,7 +5,10 @@
 <div class="container mt-5">
     <div class='card'>
         <div class='card-body'>
-            <p style='color:black'>Make selections from the different attributes in the dataset, then click the button to run the model.</p>
+            <p style='color:black'>Make selections from the different attributes in the dataset, then click the button!
+                <br>
+                Our neural network model will score how probable those selections will yield an income of 50K!
+            </p>
             {% if results['score'] == 'nope' %}
             <select id='ageSelect' onchange='ageChanged(this.value)'>
                 <option value='unselected'>Choose an Age</option>
@@ -16,6 +19,7 @@
             <select id='edSelect' onchange='edChanged(this.value)'>
                 <option value='unselected'>Choose an Education Level</option>
             </select>
+            <br style='line-height:10px'>
             <select id='msSelect' onchange='msChanged(this.value)'>
                 <option value='unselected'>Choose a Marital Status</option>
             </select>
@@ -25,6 +29,7 @@
             <select id="raceSelect" onchange='raceChanged(this.value)'>
                 <option value='unselected'>Choose a Race</option>
             </select>
+            <br>
             <select id="sexSelect" onchange='sexChanged(this.value)'>
                 <option value='unselected'>Choose a Sex</option>
             </select>
@@ -44,6 +49,7 @@
             <select id='edSelect' onchange='edChanged(this.value)'>
                 <option value="{{ results['Education Level'] }}">{{ results['Education Level'] }}</option>
             </select>
+            <br>
             <select id='msSelect' onchange='msChanged(this.value)'>
                 <option value="{{ results['Marital Status'] }}">{{ results['Marital Status'] }}</option>
             </select>
@@ -53,6 +59,7 @@
             <select id="raceSelect" onchange='raceChanged(this.value)'>
                 <option value="{{ results['Race'] }}">{{ results['Race'] }}</option>
             </select>
+            <br>
             <select id="sexSelect" onchange='sexChanged(this.value)'>
                 <option value="{{ results['Sex'] }}">{{ results['Sex'] }}</option>
             </select>
@@ -67,7 +74,7 @@
     </div>
     <div class='card mt-3'>
         <div class='card-body'>
-            <a class='btn btn-primary'  href='#' id='button' onclick="clicked()">Generate Result</a>
+            <a class='btn btn-primary'  href='#' id='button' onclick="clicked()">Run the Model!</a>
             <p style='color:black'>
                 {% if results['score'] == 'nope' %}
                 Make selections and click the button!

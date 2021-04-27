@@ -85,6 +85,10 @@ def make_prediction(age,wc,ed,ms,oc,r,s,hpw,nc):
 
     
 
+@app.route('/models')
+def models():
+    return render_template('models.html')
+
 
 @app.errorhandler(404)
 def page_not_found(error):
