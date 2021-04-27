@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class='card'>
+        <div class='card-body'>
+            <p style='color:black'>Make selections from the different attributes in the dataset, then click the button to run the model.</p>
+            {% if results['score'] == 'nope' %}
+            <select id='ageSelect' onchange='ageChanged(this.value)'>
+                <option value='unselected'>Choose an Age</option>
+            </select>
+            <select id='wcSelect' onchange='wcChanged(this.value)'>
+                <option value='unselected'>Choose an Employment Status</option>
+            </select>
+            <select id='edSelect' onchange='edChanged(this.value)'>
+                <option value='unselected'>Choose an Education Level</option>
+            </select>
+            <select id='msSelect' onchange='msChanged(this.value)'>
+                <option value='unselected'>Choose a Marital Status</option>
+            </select>
+            <select id="ocSelect" onchange='ocChanged(this.value)'>
+                <option value='unselected'>Choose an Occupation</option>
+            </select>
+            <select id="raceSelect" onchange='raceChanged(this.value)'>
+                <option value='unselected'>Choose a Race</option>
+            </select>
+            <select id="sexSelect" onchange='sexChanged(this.value)'>
+                <option value='unselected'>Choose a Sex</option>
+            </select>
+            <select id='hoursSelect' onchange="hoursChanged(this.value)">
+                <option value='unselected'>Choose an Hours per Week</option>
+            </select>
+            <select id='ncSelect' onchange="ncChanged(this.value)">
+                <option value='unselected'>Choose a Native Country</option>
+            </select>
+            {% else %}
+            <select id='ageSelect' onchange='ageChanged(this.value)'>
+                <option value="{{ results['Age'] }}">{{ results['Age'] }}</option>
+            </select>
+            <select id='wcSelect' onchange='wcChanged(this.value)'>
+                <option value="{{ results['Employment Status'] }}">{{ results['Employment Status'] }}</option>
+            </select>
+            <select id='edSelect' onchange='edChanged(this.value)'>
+                <option value="{{ results['Education Level'] }}">{{ results['Education Level'] }}</option>
+            </select>
+            <select id='msSelect' onchange='msChanged(this.value)'>
+                <option value="{{ results['Marital Status'] }}">{{ results['Marital Status'] }}</option>
+            </select>
+            <select id="ocSelect" onchange='ocChanged(this.value)'>
+                <option value="{{ results['Occupation'] }}">{{ results['Occupation'] }}</option>
+            </select>
+            <select id="raceSelect" onchange='raceChanged(this.value)'>
+                <option value="{{ results['Race'] }}">{{ results['Race'] }}</option>
+            </select>
+            <select id="sexSelect" onchange='sexChanged(this.value)'>
+                <option value="{{ results['Sex'] }}">{{ results['Sex'] }}</option>
+            </select>
+            <select id='hoursSelect' onchange="hoursChanged(this.value)">
+                <option value="{{ results['Hours per Week'] }}">{{ results['Hours per Week'] }}</option>
+            </select>
+            <select id='ncSelect' onchange="ncChanged(this.value)">
+                <option value="{{ results['Native Country'] }}">{{ results['Native Country'] }}</option>
+            </select>
+            {% endif %}
+        </div>
+    </div>
+    <div class='card mt-3'>
+        <div class='card-body'>
+            <a class='btn btn-primary'  href='#' id='button' onclick="clicked()">Generate Result</a>
+            <p style='color:black'>
+                {% if results['score'] == 'nope' %}
+                Make selections and click the button!
+                {% else %}
+                For the selection of Age: {{ results['Age'] }}, Employment Status: {{ results['Employment Status'] }}
+                Education Level: {{ results['Education Level'] }}, Marital Status: {{ results['Marital Status'] }},
+                Occupation: {{ results['Occupation'] }}, Race: {{ results['Race'] }}, Sex: {{ results['Sex'] }}.
+                Hours per Week: {{ results['Hours per Week'] }}, Native Country: {{ results['Native Country'] }}
+                
+            </p>
+            <p style='color:black'> The models predicts a {{ results['score'] }}% probability of making <=50K.</p>
+            {% endif %}
+        </div>
+    </div>
+</div> 
+<script src='https://cdn.jsdelivr.net/npm/underscore@latest/underscore-umd-min.js'></script>
+<script src='static/js/predict.js/'></script>
+
+
+
+
+{% endblock %}

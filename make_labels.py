@@ -1,9 +1,9 @@
 import pandas as pd 
 import numpy as np 
 
-def convert_to_label(ed, wc, ms, oc, r, s, nc):
+def convert_to_label(wc, ed, ms, oc, r, s, nc):
 
-    file = 'static/data/income_evaluation.csv'
+    file = 'static/data/no_spaces.csv'
     data = pd.read_csv(file)
 
     education = data['education'].unique()
@@ -52,7 +52,7 @@ def convert_to_label(ed, wc, ms, oc, r, s, nc):
         CountryLabels[country] = result[0][0]
     nc_label = CountryLabels[nc]
 
-    return [ed_label,workclass_label,marital_label,oc_label,race_label,sex_label,nc_label]
+    return [workclass_label,ed_label,marital_label,oc_label,race_label,sex_label,nc_label]
 
 
 

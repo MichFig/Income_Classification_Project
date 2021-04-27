@@ -1,5 +1,11 @@
 
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, session
+from make_labels import convert_to_label
+from tensorflow.keras.models import load_model
+import requests
+import json
+
+import numpy as np
 
 app = Flask(__name__)
 
@@ -53,6 +59,33 @@ def work_class():
 def data():
     return render_template('data.html')
 
+@app.route('/predict')
+def predict():
+    if ('results' not in session):
+        session['results'] = json.dumps({'score':"nope"})
+    
+    results = session['results']
+    session['results'] = json.dumps({'score':"nope"})
+    return render_template('predict.html',results=json.loads(results))
+
+@app.route('/<age>/<wc>/<ed>/<ms>/<oc>/<r>/<s>/<hpw>/<nc>')
+def make_prediction(age,wc,ed,ms,oc,r,s,hpw,nc):
+    converted_labels = convert_to_label(wc,ed,ms,oc,r,s,nc)
+
+    test = np.array([[int(age),converted_labels[1],converted_labels[0],converted_labels[2],converted_labels[3],converted_labels[4],converted_labels[5],int(hpw),converted_labels[6]]])
+    model = load_model('neural_network_trained.h5')
+
+    under50 = model.predict(test)[0][0]
+
+    results = json.dumps({'Age':str(age),'Employment Status':wc,'Education Level':ed,
+                    'Marital Status':ms,'Occupation':oc,'Race':r, 'Sex':s,
+                    'Hours per Week':str(hpw),'Native Country':nc,'score':str(under50)})
+    session['results'] = results
+    return redirect(url_for('.predict'))
+
+    
+
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
@@ -60,4 +93,5 @@ def page_not_found(error):
 
 if __name__ == '__main__':
     # Only run for local development.
+    app.secret_key = 'super secret key'
     app.run(host='127.0.0.1', port=8080, debug=True)
