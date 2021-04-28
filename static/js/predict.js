@@ -197,3 +197,47 @@ function clicked(){
         }
     }
 }
+
+function model(){
+    if (checkSelections()){
+        tf.loadLayersModel('static/jsmodel/model.json').then(model=>{
+        var ageSelected2 = d3.select('#ageLabel').attr('data-select');
+        var wcSelected2 = d3.select('#wcLabel').attr('data-select');
+        var edSelected2 = d3.select('#edLabel').attr('data-select');
+        var msSelected2 = d3.select('#msLabel').attr('data-select');
+        var ocSelected2 = d3.select('#ocLabel').attr('data-select');
+        var rSelected2 = d3.select('#rLabel').attr('data-select');
+        var sexSelected2 = d3.select('#sexLabel').attr('data-select');
+        var hpwSelected2 = d3.select('#hpwLabel').attr('data-select');
+        var ncSelected2 = d3.select('#ncLabel').attr('data-select');
+        console.log(parseInt(ageSelected2),parseInt(edSelected2),parseInt(wcSelected2),parseInt(msSelected2),parseInt(ocSelected2),parseInt(rSelected2),parseInt(sexSelected2),parseInt(hpwSelected2),parseInt(ncSelected2));
+        var example = tf.tensor2d([parseInt(ageSelected2),parseInt(edSelected2),parseInt(wcSelected2),parseInt(msSelected2),parseInt(ocSelected2),parseInt(rSelected2),parseInt(sexSelected2),parseInt(hpwSelected2),parseInt(ncSelected2)],[1,9]);
+        
+        var results = model.predict(example).dataSync();
+        var under = results[0];
+        var over = results[1];
+        console.log(under,over);
+        var scoreTag = d3.select('#score-statement');
+        if (under > over){
+            scoreTag.text(`The model predicts a probability of ${under}% of making <=50K.`)
+        }else{
+            scoreTag.text(`The model predicts a probability of ${over}% of making >50K.`)
+        }
+
+        
+        });
+    }
+}
+
+function checkSelections(){
+    var okay = true;
+    for (const [key,value] of Object.entries(selections)){
+        if (value[0] == 'unselected'){
+            okay = false;
+        }
+    }
+    return okay;
+    
+};
+
+model();

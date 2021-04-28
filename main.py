@@ -1,7 +1,6 @@
 
 from flask import Flask, render_template, redirect, url_for, session
 from make_labels import convert_to_label
-from tensorflow.keras.models import load_model
 import requests
 import json
 
@@ -68,18 +67,18 @@ def predict():
     session['results'] = json.dumps({'score':"nope"})
     return render_template('predict.html',results=json.loads(results))
 
+@app.route('/predictjs')
+def predictjs():
+    return render_template('predictjs.html')
+
 @app.route('/<age>/<wc>/<ed>/<ms>/<oc>/<r>/<s>/<hpw>/<nc>')
 def make_prediction(age,wc,ed,ms,oc,r,s,hpw,nc):
     converted_labels = convert_to_label(wc,ed,ms,oc,r,s,nc)
+    
 
-    test = np.array([[int(age),converted_labels[1],converted_labels[0],converted_labels[2],converted_labels[3],converted_labels[4],converted_labels[5],int(hpw),converted_labels[6]]])
-    model = load_model('neural_network_trained.h5')
-
-    under50 = model.predict(test)[0][0]
-
-    results = json.dumps({'Age':str(age),'Employment Status':wc,'Education Level':ed,
-                    'Marital Status':ms,'Occupation':oc,'Race':r, 'Sex':s,
-                    'Hours per Week':str(hpw),'Native Country':nc,'score':str(under50)})
+    results = json.dumps({'Age':[str(age),str(age)],'Employment Status':[wc,str(converted_labels[0])],'Education Level':[ed,str(converted_labels[1])],
+                    'Marital Status':[ms,str(converted_labels[2])],'Occupation':[oc,str(converted_labels[3])],'Race':[r,str(converted_labels[4])], 'Sex':[s,str(converted_labels[5])],
+                    'Hours per Week':[str(hpw),str(hpw)],'Native Country':[nc,str(converted_labels[6])],'score':'yep'})
     session['results'] = results
     return redirect(url_for('.predict'))
 

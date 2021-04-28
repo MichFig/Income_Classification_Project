@@ -41,33 +41,33 @@
             </select>
             {% else %}
             <select id='ageSelect' onchange='ageChanged(this.value)'>
-                <option value="{{ results['Age'] }}">{{ results['Age'] }}</option>
+                <option value="{{ results['Age'][0] }}">{{ results['Age'][0] }}</option>
             </select>
             <select id='wcSelect' onchange='wcChanged(this.value)'>
-                <option value="{{ results['Employment Status'] }}">{{ results['Employment Status'] }}</option>
+                <option value="{{ results['Employment Status'][0] }}">{{ results['Employment Status'][0] }}</option>
             </select>
             <select id='edSelect' onchange='edChanged(this.value)'>
-                <option value="{{ results['Education Level'] }}">{{ results['Education Level'] }}</option>
+                <option value="{{ results['Education Level'][0] }}">{{ results['Education Level'][0] }}</option>
             </select>
             <br>
             <select id='msSelect' onchange='msChanged(this.value)'>
-                <option value="{{ results['Marital Status'] }}">{{ results['Marital Status'] }}</option>
+                <option value="{{ results['Marital Status'][0] }}">{{ results['Marital Status'][0] }}</option>
             </select>
             <select id="ocSelect" onchange='ocChanged(this.value)'>
-                <option value="{{ results['Occupation'] }}">{{ results['Occupation'] }}</option>
+                <option value="{{ results['Occupation'][0] }}">{{ results['Occupation'][0] }}</option>
             </select>
             <select id="raceSelect" onchange='raceChanged(this.value)'>
-                <option value="{{ results['Race'] }}">{{ results['Race'] }}</option>
+                <option value="{{ results['Race'][0] }}">{{ results['Race'][0] }}</option>
             </select>
             <br>
             <select id="sexSelect" onchange='sexChanged(this.value)'>
-                <option value="{{ results['Sex'] }}">{{ results['Sex'] }}</option>
+                <option value="{{ results['Sex'][0] }}">{{ results['Sex'][0] }}</option>
             </select>
             <select id='hoursSelect' onchange="hoursChanged(this.value)">
-                <option value="{{ results['Hours per Week'] }}">{{ results['Hours per Week'] }}</option>
+                <option value="{{ results['Hours per Week'][0] }}">{{ results['Hours per Week'][0] }}</option>
             </select>
             <select id='ncSelect' onchange="ncChanged(this.value)">
-                <option value="{{ results['Native Country'] }}">{{ results['Native Country'] }}</option>
+                <option value="{{ results['Native Country'][0] }}">{{ results['Native Country'][0] }}</option>
             </select>
             {% endif %}
         </div>
@@ -79,18 +79,30 @@
                 {% if results['score'] == 'nope' %}
                 Make selections and click the button!
                 {% else %}
-                For the selection of Age: {{ results['Age'] }}, Employment Status: {{ results['Employment Status'] }}
-                Education Level: {{ results['Education Level'] }}, Marital Status: {{ results['Marital Status'] }},
-                Occupation: {{ results['Occupation'] }}, Race: {{ results['Race'] }}, Sex: {{ results['Sex'] }}.
-                Hours per Week: {{ results['Hours per Week'] }}, Native Country: {{ results['Native Country'] }}
+                Selections: Age: {{ results['Age'][0] }}, Employment Status: {{ results['Employment Status'][0] }},
+                Education Level: {{ results['Education Level'][0] }}, Marital Status: {{ results['Marital Status'][0] }},
+                Occupation: {{ results['Occupation'][0] }}, Race: {{ results['Race'][0] }}, Sex: {{ results['Sex'][0] }},
+                Hours per Week: {{ results['Hours per Week'][0] }}, Native Country: {{ results['Native Country'][0] }};
                 
             </p>
-            <p style='color:black'> The models predicts a {{ results['score'] }}% probability of making <=50K.</p>
+            <p style='color:black' id='score-statement'></p>
             {% endif %}
         </div>
     </div>
-</div> 
+</div>
+{% if results['score'] == 'yep' %}
+<div id='ageLabel' data-select="{{ results['Age'][1] }}"></div> 
+<div id='wcLabel' data-select="{{ results['Employment Status'][1] }}"></div> 
+<div id='edLabel' data-select="{{ results['Education Level'][1] }}"></div> 
+<div id='msLabel' data-select="{{ results['Marital Status'][1] }}"></div> 
+<div id='ocLabel' data-select="{{ results['Occupation'][1] }}"></div> 
+<div id='rLabel' data-select="{{ results['Race'][1] }}"></div> 
+<div id='sexLabel' data-select="{{ results['Sex'][1] }}"></div> 
+<div id='hpwLabel' data-select="{{ results['Hours per Week'][1] }}"></div> 
+<div id='ncLabel' data-select="{{ results['Native Country'][1] }}"></div> 
+{% endif %}
 <script src='https://cdn.jsdelivr.net/npm/underscore@latest/underscore-umd-min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
 <script src='static/js/predict.js/'></script>
 
 
