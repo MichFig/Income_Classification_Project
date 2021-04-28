@@ -3,7 +3,7 @@
 
 
 **Focus** <br><br>
-Examination of 1994 Census Income data in an attempt to predict whether an individual's income will exceed $50,000.00 per annum based on a variety of factors such as education, age, marital status, relationship status and work classification.  
+Examination of 1994 Census Income data in an attempt to predict whether an individual's income will exceed $50,000.00 per annum based on a variety of factors such as education, age, marital status, relationship status and work classification.  The big question, can we use machine learning to predict one's income.  The inflation rate in the United States between 1994 and today has been 78.84%, which translates into a total increase of $78.84. This means that 100 dollars in 1994 is equivalent to 178.84 dollars in 2021.  $89,420.00.
 
 **Dataset** <br><br>
 This project utilized a ![Kaggle](images/Kaggle_67.png)dataset.  <br>  
@@ -19,8 +19,7 @@ The raw data was downloaded as a single csv.  The raw data revealed 32561 rows d
 The data was first cleand by dropping all rows with any missing information.  ![](images/clean.png) 
 Columns were then renamed.<br> ![](images/rename.png)
 
-Finally they were grouped and exported as six (6) separate csv files. <br> ![](images/age.income.png)
-
+The data was regrouped, categorized, labled for models toe be run on and most importanly, the removal of of random spaces before, after and between the values.  
 
 **Machine Learning, Decision Trees, Linear Regression and Neural Networks** <br><br>
 
