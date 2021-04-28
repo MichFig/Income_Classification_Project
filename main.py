@@ -7,7 +7,7 @@ import json
 import numpy as np
 
 app = Flask(__name__)
-
+secret_key = 'super secret key'
 
 @app.route('/')
 @app.route('/home')
