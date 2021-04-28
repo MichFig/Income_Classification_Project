@@ -2,9 +2,43 @@
 
 {% block content %}
 
-<div class="starter-template"></div>
-<iframe src='https://michfig.github.io/Income_Classification_Project/' width='1000px' height='2000px'></iframe> 
-<script src='static/js/home.js/'></script>
+<div class="container">
+    <div class="jumbotron">
+        <h3>Income Classification Project</h3>
+        <p>By: Connor MacKenzie, Ismahan Ahan, Michelle Fegatelli</p>
+        <hr>
+        <div class='card'>
+            <div class='card-body'>
+                <h4 class='card-title'>Project Focus</h4>
+                <p class='card-text'>Examination of 1994 Census Income data in an attempt to predict whether an individual's income will exceed $50,000.00 per annum based on a variety of factors such as education, age, marital status, relationship status and work classification.</p>
+                <p class='card-text'>The goal of the project is to the Scikit-Learn and Tensorflow libraries in Python to create a variety of machine learning models,
+                    and find the most accurate model to deploy on this site where users can make their own predictions from the options of the dataset.
+                </p>
+            </div>
+        </div>
+        <div class='card'>
+            <div class='card-body'>
+                <h4 class='card-title'>About the Data</h4>
+                <p class='card-text'>The dataset used was found on Kaggle, and is based on data from the 1994 U.S. Census. The raw data revealed 32561 rows distributed throughout 15 columns. Columns consisted of the following data types:</p>
+                <img src="static/images/Raw.Data.png" alt="">
+                <p class='card-text mt-3'>Explanations of the columns of data and the different options found in the dataset can either be found by looking around our site, or by checking
+                    out <a href='http://cseweb.ucsd.edu/classes/sp15/cse190-c/reports/sp15/048.pdf'>this report</a> from the original creators of the data.
+                </p>
+            </div>
+        </div>
+        <div class='card'>
+            <div class='card-body'>
+                <h4 class='card-title'>Preparing the Data</h4>
+                <p class='card-text'>Many of the column names and individual data entries had leading whitespace, so this was stripped by renaming the columns, and looping through the entries.</p>
+                <img src="static/images/rename.png" alt=""> <img src='static/images/removespace.png' alt=''>
+                <p class='card-text'>To create charts to see any potential relationships between certain columns and the income, the pandas groupby function was used and columns generated for a total
+                    count of the rows, number earning <=50K, and number earning >50K.
+                </p>
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
