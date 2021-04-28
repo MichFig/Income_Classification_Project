@@ -10,8 +10,8 @@
         <div class='card'>
             <div class='card-body'>
                 <h4 class='card-title'>Project Focus</h4>
-                <p class='card-text'>Examination of 1994 Census Income data in an attempt to predict whether an individual's income will exceed $50,000.00 per annum based on a variety of factors such as education, age, marital status, relationship status and work classification.</p>
-                <p class='card-text'>The goal of the project is to the Scikit-Learn and Tensorflow libraries in Python to create a variety of machine learning models,
+                <p class='card-text' style='color:black'>Examination of 1994 Census Income data in an attempt to predict whether an individual's income will exceed $50,000.00 per annum based on a variety of factors such as education, age, marital status, relationship status and work classification.</p>
+                <p class='card-text' style='color:black'>The goal of the project is to the Scikit-Learn and Tensorflow libraries in Python to create a variety of machine learning models,
                     and find the most accurate model to deploy on this site where users can make their own predictions from the options of the dataset.
                 </p>
             </div>
@@ -19,9 +19,9 @@
         <div class='card'>
             <div class='card-body'>
                 <h4 class='card-title'>About the Data</h4>
-                <p class='card-text'>The dataset used was found on Kaggle, and is based on data from the 1994 U.S. Census. The raw data revealed 32561 rows distributed throughout 15 columns. Columns consisted of the following data types:</p>
+                <p class='card-text' style='color:black'>The dataset used was found on Kaggle, and is based on data from the 1994 U.S. Census. The raw data revealed 32561 rows distributed throughout 15 columns. Columns consisted of the following data types:</p>
                 <img src="static/images/Raw.Data.png" alt="">
-                <p class='card-text mt-3'>Explanations of the columns of data and the different options found in the dataset can either be found by looking around our site, or by checking
+                <p class='card-text mt-3' style='color:black'>Explanations of the columns of data and the different options found in the dataset can either be found by looking around our site, or by checking
                     out <a href='http://cseweb.ucsd.edu/classes/sp15/cse190-c/reports/sp15/048.pdf'>this report</a> from the original creators of the data.
                 </p>
             </div>
@@ -29,21 +29,21 @@
         <div class='card mt-3'>
             <div class='card-body'>
                 <h4 class='card-title'>Preparing the Data</h4>
-                <p class='card-text'>Many of the column names and individual data entries had leading whitespace, so this was stripped by renaming the columns, and looping through the entries.</p>
+                <p class='card-text' style='color:black'>Many of the column names and individual data entries had leading whitespace, so this was stripped by renaming the columns, and looping through the entries.</p>
                 <img src="static/images/rename.png" alt=""> 
                 <img class='mt-3' src='static/images/removespace.png' alt=''>
-                <p class='card-text mt-3'>To create charts to see any potential relationships between certain columns and the income, the pandas groupby function was used and columns generated for a total
+                <p class='card-text mt-3' style='color:black'>To create charts to see any potential relationships between certain columns and the income, the pandas groupby function was used and columns generated for a total
                     count of the rows, number earning <=50K, and number earning >50K.
                 </p>
                 <img src="static/images/counts.PNG" alt="">
-                <p class='card-text mt-3'>In order to get the data ready for the machine learning models, all the columns were converted to numerical data from the categories.</p>
+                <p class='card-text mt-3' style='color:black'>In order to get the data ready for the machine learning models, all the columns were converted to numerical data from the categories.</p>
                 <img src="static/images/labels1.png" alt="">
                 <img class='mt-3' src="static/images/labels2.png" alt="">
             </div>
         </div>
         <div class='card mt-3'>
             <div class='card-body'>
-                <p>Use the <a href='/data'>data page</a> to see the cleaned dataset, <a href="/models">models page</a> for a look at the different models used,
+                <p style='color:black'>Use the <a href='/data'>data page</a> to see the cleaned dataset, <a href="/models">models page</a> for a look at the different models used,
                 <a href="/predict">predict page</a> to make predictions using the best model, and the different chart pages to see how each factor might influence income.
                 </p> 
             </div>
@@ -57,7 +57,7 @@
                             <a href="https://www.heroku.com/">
                                 <img src="static/images/heroku.png" alt="" style='width: 25%'>
                                 <div class='caption'>
-                                    <p>Hosted by Heroku</p>
+                                    <p style='color:black'>Hosted by Heroku</p>
                                 </div>
                             </a>
                         </div>
@@ -67,7 +67,7 @@
                             <a href="https://www.kaggle.com/lodetomasi1995/income-classification">
                                 <img src="static/images/kaggle.png" alt="" style='width: 25%'>
                                 <div class='caption'>
-                                    <p>Data from Kaggle</p>
+                                    <p style='color:black'>Data from Kaggle</p>
                                 </div>
                             </a>
                         </div>
